@@ -10,10 +10,17 @@ const personalMovieDB = {
         privat: false
     };
 
-for (let i = 0; i <= 1; i++) {
-    let question1 = prompt("Last wached film?", ""),
-        question2 = prompt("Rate it", "");
-    personalMovieDB.movies[question1] = question2;
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Last wached film?", ""),
+        b = prompt("Rate it", "");
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
 }
 
 console.log(personalMovieDB);
