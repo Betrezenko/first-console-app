@@ -21,12 +21,14 @@ const personalMovieDB = {
     };
 
 function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 1; i < 4; i++) {
         let a = prompt("Last wached film?", ""),
-            b = prompt("Rate it", "");
+            b = prompt("Rate it", ""),
+            c = prompt(`Which genre it was?${i}`, "");
     
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        if (a != null && b != null && c != null && a != '' && b != '' && c != '' && a.length < 50) {
             personalMovieDB.movies[a] = b;
+            personalMovieDB.genres[i-1] = c;
             console.log('done');
         } else {
             console.log('error');
@@ -51,4 +53,11 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-console.log(personalMovieDB);
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB();
+
