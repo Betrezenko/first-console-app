@@ -23,4 +23,14 @@ for (let i = 0; i < 2; i++) {
     }
 }
 
+if (personalMovieDB.count < 10) {
+    console.log("Watched few films");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Casual user');
+} else if (personalMovieDB.count > 30) {
+    console.log('Fan');
+} else {
+    console.log('error');
+}
+
 console.log(personalMovieDB);
